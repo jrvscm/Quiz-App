@@ -1,0 +1,768 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/*--------------------------Base Styles-----------------------------------*/ 
+
+html {
+  background: url(images/pirates-of-the-caribbean-on-stranger-tides.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  background:rgba(0,0,0,.5);
+  height: 100%;
+  width: 100%;
+  margin:0;
+  padding-top:20px;
+}
+
+.hidden{
+  display:none;
+}
+
+i.fa.fa-check,
+i.fa.fa-ban {
+  float:right;
+  display: inline;
+}
+
+section {
+  width: 750px;
+  margin:0 auto;
+  background-color:rgba(0,0,0,0.2);
+  background: transparent;
+  color: white;
+}
+
+input {
+  cursor: pointer;
+  display:none;
+}
+
+label {
+  display: inline-block;
+  cursor: pointer;
+  width: 470px;
+}
+
+.answer-div {
+  transition: all .3s ease;
+  padding:0 5px 0 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 10px;
+
+}
+
+.answer-div:hover {
+  background-color: rgba(0,0,0,0.5);
+  border:2px solid rgb(227, 190, 66);
+  padding:0 5px 0 5px;
+  border-radius: 10px;
+}
+
+.clicked-input {
+  background-color: rgba(0,0,0,0.5);
+  border:2px solid rgb(227, 190, 66);
+  border-radius: 10px;
+}
+
+.correct-answer {
+  background-color: rgba(0,0,0,0.5);
+  border:2px solid rgb(50,205,50);
+  border-radius: 10px;
+}
+
+li {
+  list-style-type: none;
+  margin: 0px auto;
+  display: inline;
+  padding: 10px;
+}
+
+.heading {
+    text-align: center;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 1px solid rgb(189, 137, 85);
+    border-left: 1px solid rgb(189, 137, 85);
+    border-right: 1px solid rgb(189, 137, 85);
+    border-radius: 10px 10px 0 0;
+    background: url('images/treasure-map.jpg') no-repeat center center;
+    background-size: cover;
+    font-size: 30px;
+    color: white;
+    max-width:748px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .heading-wrapper {
+  background-color: rgba(0,0,0,0.5);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  }
+
+.sparrow {
+  font-family: 'Oleo Script', cursive;
+}
+
+h1{
+  margin-bottom: 25px;
+}
+
+.starting-statement-container {
+  width: 748px;
+  text-align: center;
+  color:white;
+  border-left: 1px solid rgb(189, 137, 85);
+  border-right: 1px solid rgb(189, 137, 85);
+  border-bottom:1px solid rgb(189, 137, 85);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.starting-statement-container p {
+  padding-bottom: 20px;
+}
+
+.button {
+  cursor:pointer;
+  font-size: 20px;
+  padding: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 120px;
+  border-radius: 50px;
+  border: 2px solid rgb(227, 190, 66);
+  color:white;
+  background:transparent;
+  transition: all .5s ease;
+}
+
+.button:hover {
+  background: rgb(227, 190, 66);
+}
+
+.button:focus {
+  outline:none;
+}
+
+.button.disabled {
+  background-color: rgba(255,255,255,0.5);
+  border: 2px solid rgba(255,255,255,0.5);
+}
+
+.button.disabled:hover {
+  background-color: rgba(255,255,255);
+  border: 2px solid #d3d3d3;
+  cursor: not-allowed;
+}
+
+.question-wrapper {
+  background: url('images/treasure-map.jpg') no-repeat center center;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 748px;
+}
+
+.start-wrapper {
+  background: url('images/treasure-map.jpg') no-repeat center center;
+  background-size: cover;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.question-container {
+  opacity: 1;
+  display:table;
+  height: 200px;
+  background-color: rgba(0,0,0,.6);
+  border-top: 1px solid rgb(189, 137, 85);
+  border-left: 1px solid rgb(189, 137, 85);
+  border-right: 1px solid rgb(189, 137, 85);
+  border-radius: 10px 10px 0 0;
+  width: 748px;
+  margin-top: 100px;
+}
+
+
+.question-container p {
+  font-size: 40px;
+  display:table-cell;
+  height: 200px;
+  width: 748px;
+  vertical-align: middle;
+  padding: 30px;
+}
+
+.answers-fieldset {
+  margin-left:50px;
+  height: 300px;
+  border:none;
+}
+
+#radio-selection {
+  background-color: rgba(0,0,0,.3);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.choices {
+  background: url('images/treasure-map.jpg') no-repeat center center;
+  background-size: cover;
+  border-left: 1px solid rgb(189, 137, 85);
+  border-right: 1px solid rgb(189, 137, 85);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 747px;
+}
+
+.answer-div {
+  width: 500px;
+  margin:20px;
+}
+
+.question-ul {
+  width:747px;
+  text-align: center;
+  border-bottom: 1px solid rgb(189, 137, 85);
+  border-right: none;
+  border-left: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: rgba(0,0,0,.4);
+}
+
+.question-ul li {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.alert-correct-answer {
+  background: rgba(132,112,255,.6);
+  height:100%;
+  text-align: center;
+  font-size: 30px;
+}
+
+.alert-incorrect-answer {
+  background: rgba(132,112,255,.6);
+  height: 100%;
+  text-align: center;
+}
+
+.ending-statement-container {
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 10px;
+  border-top: 1px solid rgb(189, 137, 85);
+  border-bottom:1px solid rgb(189, 137, 85);
+  border-left: 1px solid rgb(189, 137, 85);
+  border-right: 1px solid rgb(189, 137, 85);
+  text-align: center;
+  margin-top: 200px;
+}
+
+.ending-statement-container p {
+  padding-top: 20px;
+}
+
+.ending-wrapper {
+  background: url('images/treasure-map.jpg') no-repeat center center;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.restart-button {
+  margin: 20px auto;
+  width: 120px;
+}
+
+/*----------------------hr-------------------*/
+hr.curly { 
+  height: 30px; 
+  border-style: solid; 
+  border-color:rgb(227, 190, 66);
+  border-width: 2px 0 0 0; 
+  border-radius: 20px; 
+  margin: 0 auto;
+  width: 90%;
+} 
+
+hr.curly:before { 
+  display: block; 
+  content: ""; 
+  height: 30px; 
+  margin-top: -31px; 
+  border-style: solid; 
+  border-color:rgb(227, 190, 66);
+  border-width: 0 0 2px 0; 
+  border-radius: 20px;  
+}
+
+
+
+/*---------------------media queries---------------*/
+
+@media screen and (max-device-width: 375px) and (max-device-height: 667px) {
+
+
+  html {
+    background:none;
+    background-color: rgb(84,127,89) !important;
+    height:100%;
+    width: 100%;
+  }
+
+
+  body {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(84,127,89) !important;
+  height: 100%;
+  width: 100%;
+  display: table;
+  margin: 0 auto;
+  padding-top: 0;
+}
+
+.heading {
+  border:none;
+  background-color: rgb(84,127,89) !important;
+  margin-top: 0px;
+}
+
+.heading-wrapper {
+  background-color: rgb(84,127,89) !important;
+}
+
+header h1{
+  font-size: 80px;
+  padding: 250px 20px 0 20px;
+}
+
+section {
+  background-color: rgb(84,127,89) !important;
+  color: white;
+  border: none;
+  border-radius: 0px;
+}
+
+.start-message {
+  padding: 20px;
+  font-size: 45px;
+  background-color:rgb(84,127,89) !important;
+  margin:0;
+}
+
+.starting-statement-container {
+  border:none;
+  border-radius: 0px;
+  background-color: rgb(84,127,89) !important;
+  margin:0;
+
+}
+
+.ending-statement-container {
+  border: none;
+  background-color: rgb(84,127,89) !important;
+  margin-top: 400px;
+}
+
+.ending-statement-container p {
+  font-size: 45px;
+}
+
+.question-answer-section {
+  background-color: rgb(84,127,89) !important;
+}
+
+.question-wrapper {
+  background: none;
+  background-color:rgb(84,127,89) !important;
+}
+
+.start-wrapper {
+  background:none;
+  background-color: rgb(84,127,89) !important;
+}
+
+.ending-wrapper {
+  background: none;
+  background-color:rgb(84,127,89) !important;
+}
+
+.question-ul {
+  border:none;
+  margin-top: 50px;
+  width: 811px;
+  background-color: rgb(84,127,89) !important;
+}
+
+
+.question-ul li {
+  padding: 10px 3px 3px 3px;
+  font-size:40px;
+}
+
+.question-container {
+  height: 300px;
+  width: 102%;
+  margin: 0;
+  padding:30px 30px 30px 30px;
+  border-radius: 0px;
+  border:none;
+  background: url('images/Pirates_4_banner_wide2.jpg');
+  background-size: cover;
+}
+
+.question-container p {
+  font-size: 50px;
+  height:400px;
+  background-color: rgba(101,127,84,.8) !important;
+}
+
+#radio-selection {
+  border: none;
+  font-size: 30px; 
+  height: 100%
+  width:100%;
+  background-color:rgb(84,127,89) !important;
+  border: none;
+}
+
+.answers-fieldset {
+  background-color: rgb(84,127,89) !important;
+  border: none;
+  height: 500px;
+  margin:40px 0 0 0;
+  padding-left: 30px;
+}
+
+.answer-div {
+  font-size: 50px;
+  width: 600px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+.button {
+  margin-top: 20;
+  padding:5px;
+  font-size: 50px;
+  width: 100%;
+  font-style: bold;
+  border:2px solid rgb(227, 190, 66);
+}
+
+.start-button {
+  background-color:rgb(84,127,89)!important;
+}
+
+.choices {
+  background: none;
+  background-color:rgb(84,127,89) !important;
+  width: 110%
+  height:110%;
+}
+
+.restart-button {
+  margin-top: 25px;
+  background
+}
+
+#jsFormFooter > ul > li:nth-child(1) {
+  width: 100%;
+  margin:0;
+  padding:10px 0 10px 0;
+}
+
+#jsFormFooter > ul > li:nth-child(1) > button {
+  width: 821px;
+  padding:20px;
+  margin: 10px 0 10px 0;
+  font-size: 50px;
+  font-weight: bold;
+  border-radius: 0px;
+}
+
+#jsFormFooter > ul > li:nth-child(2) {
+  width: 100%;
+  margin:0;
+  padding:10px 0 10px 0;
+}
+
+#jsFormFooter > ul > li:nth-child(2) > button {
+  width: 821px;
+  padding:20px;
+  margin: 10px 0 10px 0;
+  font-size: 50px;
+  font-weight: bold;
+  border-radius: 0px;
+}
+
+hr.curly { 
+  height: 30px; 
+  border-style: solid; 
+  border-color:rgb(227, 190, 66);
+  border-width: 2px 0 0 0; 
+  border-radius: 20px; 
+  margin: 0 auto;
+  width: 90%;
+} 
+
+hr.curly:before { 
+  display: block; 
+  content: ""; 
+  height: 30px; 
+  margin-top: -31px; 
+  border-style: solid; 
+  border-color:rgb(227, 190, 66);
+  border-width: 0 0 2px 0; 
+  border-radius: 20px;  
+}
+
+}
+
+@media screen and (max-device-width: 414px) and (max-device-height: 736px) {
+
+
+   
+   html {
+    background:none;
+    background-color: rgb(84,127,89) !important;
+    height:100%;
+    width: 100%;
+  }
+
+
+  body {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(84,127,89) !important;
+  height: 100%;
+  width: 100%;
+  display: table;
+  margin: 0 auto;
+  padding-top: 0;
+}
+
+.heading {
+  border:none;
+  background-color: rgb(84,127,89) !important;
+  margin-top: 0px;
+}
+
+.heading-wrapper {
+  background-color: rgb(84,127,89) !important;
+}
+
+header h1{
+  font-size: 80px;
+  padding: 250px 20px 0 20px;
+}
+
+section {
+  background-color: rgb(84,127,89) !important;
+  color: white;
+  border: none;
+  border-radius: 0px;
+}
+
+.start-message {
+  padding: 20px;
+  font-size: 45px;
+  background-color:rgb(84,127,89) !important;
+  margin:0;
+}
+
+.starting-statement-container {
+  border:none;
+  border-radius: 0px;
+  background-color: rgb(84,127,89) !important;
+  margin:0;
+
+}
+
+.ending-statement-container {
+  border: none;
+  background-color: rgb(84,127,89) !important;
+  margin-top: 400px;
+}
+
+.ending-statement-container p {
+  font-size: 45px;
+}
+
+.question-answer-section {
+  background-color: rgb(84,127,89) !important;
+}
+
+.question-wrapper {
+  background: none;
+  background-color:rgb(84,127,89) !important;
+}
+
+.start-wrapper {
+  background:none;
+  background-color: rgb(84,127,89) !important;
+}
+
+.ending-wrapper {
+  background: none;
+  background-color:rgb(84,127,89) !important;
+}
+
+.question-ul {
+  border:none;
+  margin-top: 50px;
+  width: 811px;
+  background-color: rgb(84,127,89) !important;
+}
+
+
+.question-ul li {
+  padding: 10px 3px 3px 3px;
+  font-size:40px;
+}
+
+.question-container {
+  height: 300px;
+  width: 102%;
+  margin: 0;
+  padding:30px 30px 30px 30px;
+  border-radius: 0px;
+  border:none;
+  background: url('images/Pirates_4_banner_wide2.jpg');
+  background-size: cover;
+}
+
+.question-container p {
+  font-size: 50px;
+  height:400px;
+  background-color: rgba(101,127,84,.8) !important;
+}
+
+#radio-selection {
+  border: none;
+  font-size: 30px; 
+  height: 100%
+  width:100%;
+  background-color:rgb(84,127,89) !important;
+  border: none;
+}
+
+.answers-fieldset {
+  background-color: rgb(84,127,89) !important;
+  border: none;
+  height: 500px;
+  margin:40px 0 0 0;
+  padding-left: 30px;
+}
+
+.answer-div {
+  font-size: 50px;
+  width: 600px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+.button {
+  margin-top: 20;
+  padding:5px;
+  font-size: 50px;
+  width: 100%;
+  font-style: bold;
+  border:2px solid rgb(227, 190, 66);
+}
+
+.start-button {
+  background-color:rgb(84,127,89)!important;
+}
+
+.choices {
+  background: none;
+  background-color:rgb(84,127,89) !important;
+  width: 110%
+  height:110%;
+}
+
+.restart-button {
+  margin-top: 25px;
+  background
+}
+
+#jsFormFooter > ul > li:nth-child(1) {
+  width: 100%;
+  margin:0;
+  padding:10px 0 10px 0;
+}
+
+#jsFormFooter > ul > li:nth-child(1) > button {
+  width: 821px;
+  padding:20px;
+  margin: 10px 0 10px 0;
+  font-size: 50px;
+  font-weight: bold;
+  border-radius: 0px;
+}
+
+#jsFormFooter > ul > li:nth-child(2) {
+  width: 100%;
+  margin:0;
+  padding:10px 0 10px 0;
+}
+
+#jsFormFooter > ul > li:nth-child(2) > button {
+  width: 821px;
+  padding:20px;
+  margin: 10px 0 10px 0;
+  font-size: 50px;
+  font-weight: bold;
+  border-radius: 0px;
+}
+
+hr.curly { 
+  height: 30px; 
+  border-style: solid; 
+  border-color:rgb(227, 190, 66);
+  border-width: 2px 0 0 0; 
+  border-radius: 20px; 
+  margin: 0 auto;
+  width: 90%;
+} 
+
+hr.curly:before { 
+  display: block; 
+  content: ""; 
+  height: 30px; 
+  margin-top: -31px; 
+  border-style: solid; 
+  border-color:rgb(227, 190, 66);
+  border-width: 0 0 2px 0; 
+  border-radius: 20px;  
+}
+
+}
+

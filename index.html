@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Pirates of the Caribbean Quiz</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Oleo+Script" rel="stylesheet">
+    <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+
+
+  <section class="finished-section hidden">
+    <div class="ending-wrapper">
+      <div class="ending-statement-container">
+        <p>You scored: <span id='jsFinalScore'></span>
+        <p>Click restart to take the quiz again!</p>
+        <button class="button restart-button jsRestartButton" role="button">Restart</button>
+      </div> 
+    </div>
+  </section>
+  
+  <section class="question-answer-section hidden">
+  <div class="question-wrapper"> 
+    <div class="quiz-question question-container">
+      <p>This is a sample question?</p>
+    </div>
+  </div>
+
+    <div class="choices">
+      
+      <form id="radio-selection">
+        <fieldset id="jsRadioWrapper" class="answers-fieldset">
+          <div class="answer-div jsAnswerDiv jsAnswerDiv1">
+            <input type="radio" id="choice1" name="answer" value="choice1">
+            <label for="choice1">example answer</label>
+          </div>
+          <div class="answer-div jsAnswerDiv jsAnswerDiv2">
+            <input type="radio" id="choice2" name="answer" value="choice2">
+            <label for="choice2">example answer</label>
+          </div>
+          
+          <div class="answer-div jsAnswerDiv jsAnswerDiv3">
+            <input type="radio" id="choice3" name="answer" value="choice3">
+            <label for="choice2">example answer</label>
+          </div>
+
+          <div class="answer-div jsAnswerDiv jsAnswerDiv4">
+            <input type="radio" id="choice4" name="answer" value="choice4">
+            <label for="choice4">example answer</label>
+          </div>
+        </fieldset>
+
+        <footer id="jsFormFooter">
+          <ul class="question-ul jsQuestionUl">
+            <li><button class="button submit-answer jsSubmitAnswerButton" role="submit">Submit</button></li>
+            <li class='jsQuestionLi'><button class="button next-question jsNextQuestionButton" role="button"><span class="next">Next</span></button></li>
+            <li class="question-counter">Question: <span id='jsCurrentQuestion'></span></li>
+            <li class="score-counter">Score: <span id='jsCurrentScore'></span></li>
+          </ul>
+        </footer>
+      </form>
+
+    </div>
+  </section>
+
+  <header role="banner" class="heading">
+    <div class="heading-wrapper">
+      <h1>You dont know Jack <span class="sparrow">(<em>Sparrow</em>),</span> A pirate quiz.</h1>
+    <hr class="curly">
+    </div>  
+  </header>
+    
+  <section class="start-section">
+    <div class="start-wrapper">
+      <div class="starting-statement-container">
+        <p class=start-message><strong>Click start to test your knowledge of the high seas!</strong></p>
+        <button class="start-button button" role="button">Start</button>
+      </div>
+    </div>
+  </section>
+
+  
+    
+    </body>
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+    <script src="questions.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
