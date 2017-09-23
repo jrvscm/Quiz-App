@@ -201,21 +201,21 @@ h1{
 .question-container {
   opacity: 1;
   display:table;
-  height: 210px;
+  height: 150px;
   background-color: rgba(0,0,0,.6);
   border-top: 1px solid rgb(189, 137, 85);
   border-left: 1px solid rgb(189, 137, 85);
   border-right: 1px solid rgb(189, 137, 85);
   border-radius: 10px 10px 0 0;
   width: 750px;
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 
 .question-container p {
-  font-size: 40px;
+  font-size: 30px;
   display:table-cell;
-  height: 210px;
+  height: 150px;
   width: 750px;
   vertical-align: middle;
   padding: 30px;
