@@ -13,9 +13,11 @@ function shuffleQuestions() {
   function handleStartClicks() {
     $('.starting-statement-container').off().on('click', '.start-button', event => {
       console.log('handleStartClicks ran');
-      $('.start-section').fadeOut();
-      $('header').fadeOut();
-      $('.question-answer-section').fadeIn();
+      $('.start-section').fadeOut('fast');
+      $('header').fadeOut('fast');
+      setTimeout(function() {
+      $('.question-answer-section').fadeIn('fast');
+    }, 350);
       disableNext();
       disableSubmit();
       inputClicked();
@@ -71,20 +73,20 @@ function shuffleQuestions() {
   }
 
   function insertNewQuestion(quizQuestion, currentCount) {
-    $('.quiz-question p').fadeOut()
+    $('.quiz-question p').fadeOut('fast');
     setTimeout(function() {
-    $('.quiz-question').empty().append(quizQuestion).fadeIn();
-  }, 350);
+    $('.quiz-question p').empty().append(quizQuestion).fadeIn('fast');
+  }, 180);
     console.log('insertNewQuestion ran');
   }
 
   function insertNewAnswer(quizAnswers, currentCount) {
-    $('#jsRadioWrapper').fadeOut();
+    $('#jsRadioWrapper').fadeOut('fast');
     setTimeout(function() {
-    $('#jsRadioWrapper').empty().append(quizAnswers).fadeIn(); 
+    $('#jsRadioWrapper').empty().append(quizAnswers).fadeIn('fast'); 
     console.log('insertNewAnswer ran');
     updateCount(currentCount);
-  }, 350);
+  }, 180);
   }
 
   function handleNextButtonClick(currentCount) {
@@ -291,8 +293,10 @@ function shuffleQuestions() {
 
   function displayEndQuiz(currentCount) {
     if(currentCount === 10) {
-    $('.question-answer-section').fadeOut();
-    $('.finished-section').fadeIn();
+    $('.question-answer-section').fadeOut('fast');
+    setTimeout(function() {
+    $('.finished-section').fadeIn('fast');
+    }, 350);
   }
   }
 
@@ -321,12 +325,12 @@ function shuffleQuestions() {
 
   function restartQuiz(currentCount) {
     $('.ending-statement-container').off().on('click', '.jsRestartButton', event => {
-      $('.finished-section').fadeOut();
+      $('.finished-section').fadeOut('fast');
       resetScoreCount(currentCount);
       console.log(score);
       setTimeout(function() {
       $('.question-answer-section').fadeIn();
-    }, 200);
+    }, 350);
     });
   }
 
